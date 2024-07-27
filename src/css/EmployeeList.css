@@ -1,0 +1,32 @@
+h1 {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+a {
+	margin-bottom: 40px;
+}
+
+.display {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.display th,
+.display td {
+	width: 100px;
+	border: 1px solid #ddd;
+	padding: 20px;
+	text-align: center;
+}
+
+
+.display th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #f2f2f2;
+}

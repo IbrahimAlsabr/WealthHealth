@@ -4,11 +4,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import Modal from "react-modal";
 import { departments } from "../data/departments";
 import { states } from "../data/state";
-import DropDown from "../components/DropDown";
+import DropDown from "react-dropdown-plugin";
 import { Link } from "react-router-dom";
 import "../css/createEmployee.css";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../reducer/employeeSlice";
+import "../css/dropDown.css";
 
 Modal.setAppElement("#root");
 

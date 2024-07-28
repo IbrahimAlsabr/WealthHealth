@@ -114,13 +114,6 @@ const CreateEmployee = () => {
 
                 <label htmlFor="department">Department</label>
                 <DropDown
-                    data={departments}
-                    onSelect={handleDepartmentSelect}
-                    ASC={true}
-                    initialOption="Option 1"
-                />
-
-                <DropDown
                     id="department"
                     data={departments}
                     onSelect={handleDepartmentSelect}

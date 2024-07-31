@@ -51,100 +51,102 @@ const CreateEmployee = () => {
     };
 
     return (
-        <div className="container">
-            <h2>Create Employee</h2>
-            <Link to="/employees">Current Employees</Link>
-            <form>
-                <label htmlFor="first-name">First Name</label>
-                <input
-                    type="text"
-                    id="first-name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
-
-                <label htmlFor="last-name">Last Name</label>
-                <input
-                    type="text"
-                    id="last-name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-
-                <label htmlFor="date-of-birth">Date of Birth</label>
-                <DatePicker
-                    selected={dateOfBirth}
-                    onChange={(date) => setDateOfBirth(date)}
-                    dateFormat="MM/dd/yyyy"
-                />
-
-                <label htmlFor="start-date">Start Date</label>
-                <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    dateFormat="MM/dd/yyyy"
-                />
-
-                <fieldset className="address">
-                    <legend>Address</legend>
-
-                    <label htmlFor="street">Street</label>
+        <>
+            <div className="container">
+                <h2>Create Employee</h2>
+                <Link to="/employees">Current Employees</Link>
+                <form>
+                    <label htmlFor="first-name">First Name</label>
                     <input
-                        id="street"
                         type="text"
-                        value={street}
-                        onChange={(e) => setStreet(e.target.value)}
+                        id="first-name"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
                     />
 
-                    <label htmlFor="city">City</label>
+                    <label htmlFor="last-name">Last Name</label>
                     <input
-                        id="city"
                         type="text"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
+                        id="last-name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
                     />
 
-                    <label htmlFor="zip-code">Zip Code</label>
-                    <input
-                        id="zip-code"
-                        type="number"
-                        value={zipCode}
-                        onChange={(e) => setZipCode(e.target.value)}
+                    <label htmlFor="date-of-birth">Date of Birth</label>
+                    <DatePicker
+                        selected={dateOfBirth}
+                        onChange={(date) => setDateOfBirth(date)}
+                        dateFormat="MM/dd/yyyy"
                     />
-                </fieldset>
 
-                <label htmlFor="department">Department</label>
-                <DropDown
-                    id="department"
-                    data={departments}
-                    onSelect={handleDepartmentSelect}
-                    ASC={true}
-                    initialOption={selectedDepartment}
-                />
+                    <label htmlFor="start-date">Start Date</label>
+                    <DatePicker
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                        dateFormat="MM/dd/yyyy"
+                    />
 
-                <label htmlFor="state">State</label>
-                <DropDown
-                    id="state"
-                    data={states}
-                    onSelect={handleStateSelect}
-                    ASC={true}
-                    initialOption={selectedState}
-                />
-            </form>
+                    <fieldset className="address">
+                        <legend>Address</legend>
 
-            <div className="btnDiv">
-                <button onClick={saveEmployee}>Save</button>
+                        <label htmlFor="street">Street</label>
+                        <input
+                            id="street"
+                            type="text"
+                            value={street}
+                            onChange={(e) => setStreet(e.target.value)}
+                        />
+
+                        <label htmlFor="city">City</label>
+                        <input
+                            id="city"
+                            type="text"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                        />
+
+                        <label htmlFor="zip-code">Zip Code</label>
+                        <input
+                            id="zip-code"
+                            type="number"
+                            value={zipCode}
+                            onChange={(e) => setZipCode(e.target.value)}
+                        />
+                    </fieldset>
+
+                    <label htmlFor="department">Department</label>
+                    <DropDown
+                        id="department"
+                        data={departments}
+                        onSelect={handleDepartmentSelect}
+                        ASC={true}
+                        initialOption={selectedDepartment}
+                    />
+
+                    <label htmlFor="state">State</label>
+                    <DropDown
+                        id="state"
+                        data={states}
+                        onSelect={handleStateSelect}
+                        ASC={true}
+                        initialOption={selectedState}
+                    />
+                </form>
+
+                <div className="btnDiv">
+                    <button onClick={saveEmployee}>Save</button>
+                </div>
+
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                    contentLabel="Employee Created"
+                >
+                    <div>Employee Created!</div>
+                    <button onClick={() => setModalIsOpen(false)}>Close</button>
+                </Modal>
             </div>
-
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={() => setModalIsOpen(false)}
-                contentLabel="Employee Created"
-            >
-                <div>Employee Created!</div>
-                <button onClick={() => setModalIsOpen(false)}>Close</button>
-            </Modal>
-        </div>
+        </>
     );
 };
 
